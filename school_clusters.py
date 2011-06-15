@@ -89,13 +89,6 @@ if __name__ == '__main__':
     for i in range(30):
         schools.append(School(name,race()))
 
-#    s = School(name,race)
-#    s.print_school()
-
-#    s1 = School(name+name,race)
-#    s1.print_school()
-    
-#    schools = [s,s1,s,s1]
     data = build_data_array(schools)
     (clusterid, error, nfound) = kcluster(data,nclusters=3,npass=3,dist='b')
     print clusterid, nfound
