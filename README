@@ -1,0 +1,13 @@
+Cluster Analysis of Schools
+
+This performs a simple cluster analysis on a group of public schools. Several variables or groups of them can be used as the basis of clustering, including demographic data like racial/ethnic composition, poverty level or free or reduced lunch enrollment percentage (FRPL), or various test scores. Other data can also be used, since this is just exploratory and descriptive.
+
+----------------
+CREDITS
+
+Kenneth L. Graham
+
+LICENSE
+
+Copyright (c) 2011, Kenneth L. Graham
+All rights reserved.
