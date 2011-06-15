@@ -97,6 +97,6 @@ if __name__ == '__main__':
     
 #    schools = [s,s1,s,s1]
     data = build_data_array(schools)
-    (clusterid, error, nfound) = kcluster(data,nclusters=3,npass=3,dist='e')
+    (clusterid, error, nfound) = kcluster(data,nclusters=3,npass=3,dist='b')
     print clusterid, nfound
 
