@@ -2,7 +2,9 @@
 # encoding: utf-8
 
 '''
-The objective is to see how schools form clusters, according to various characteristics, such as demographics, test scores, ayp, grad rate, etc, and locale
+This file lets you cluster a list of schools accordining to their data.
+Any school-level data can be used. Demographics, test scores, grad rates, 
+NCLB/AYP performance, etc.
 
 Author: Ken Graham
 
@@ -10,10 +12,9 @@ Copyright (c) 2011, Ken Graham
 All rights reserved.
 '''
 
-from Pycluster import *
+from Pycluster import kcluster
 import school_clusters as SC
 import csv
-import string
 
 filename = 'high-priority.csv'
 

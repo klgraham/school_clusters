@@ -17,30 +17,12 @@ from random import random
 
 class School(object):
     
-    def __init__(self,name,demographics):
-        self.name = name
-
-        # demographics holds racial and ethnic %s as a dictionary
-        # {white, black, latino, asian, pacific islander, native am, FRPL}
-        self.demographics = demographics
-#        self.test_scores = test_scores
-#        self.ayp = ayp # school performance variables (numeric)
-
-        data = self.demographics.values()
-        self.data = tuple(data)
+    def __init__(self,data):
+	self.name = data[2]
+        self.data = tuple(data[4:-4])
 
     def print_school(self):
         print self.name,self.data
-
-#        if (self.demographics != None):
-#            for r in self.demographics:
-#                print ', %s: %f' % (r, self.demographics[r]),
-#            print ''
-
-#        if (self.test_scores != None):
-#            for r in self.test_scores:
-#                print ', %s: %f' % (r, self.test_scores),
-#            print ''
 
     def get_data(self):
         return self.data
@@ -48,7 +30,7 @@ class School(object):
 def build_data_array(schools):
     d = []
     for s in schools:
-        d.append(s.get_data())
+          d.append(s.get_data())
     return numpy.array(d)
 
 # k-means clustering algorithm
@@ -63,33 +45,17 @@ def build_data_array(schools):
 
 if __name__ == '__main__':
     name = 'Central High'
-#    race = {
-#        'white': .75,
-#        'black': .10,
-#        'latino': .10,
-#        'asian': .02,
-#        'pac_isle': .02,
-#        'native': .01,
-#        'frpl': .67
-#    }
 
     def race():
-      d = {
-            'white': random(),
-            'black': random(),
-            'latino': random(),
-            'asian': random(),
-            'pac_isle': random(),
-            'native': random(),
-            'frpl': random()
-      }
-      return d
+        d = ['asdfa','adfa',name,'adsf',1000*random(),random(),random(),random(),random(),random(),random(),random()]
+
+        return d
 
     schools = []
-    for i in range(30):
-        schools.append(School(name,race()))
+    for i in range(10):
+        schools.append(School(race()))
 
     data = build_data_array(schools)
     (clusterid, error, nfound) = kcluster(data,nclusters=3,npass=3,dist='b')
     print clusterid, nfound
-
+   
